@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<SplitPane dividerPositions="0.6670378619153675" prefHeight="600" prefWidth="900" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.lpwanw.appui.controller.PhongThiController">
+  <items>
+    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+         <children>
+            <VBox layoutX="-5.0" layoutY="-5.0">
+               <children>
+                  <HBox alignment="CENTER" prefHeight="46.0" prefWidth="596.0">
+                     <children>
+                        <ComboBox fx:id="KhoaThiCombo" prefWidth="150.0" />
+                     </children>
+                  </HBox>
+                  <TableView fx:id="table" onMouseClicked="#onTableClick" prefHeight="565.0" prefWidth="587.0">
+                    <columns>
+                      <TableColumn fx:id="tenColumn" prefWidth="115.0" text="Tên phòng" />
+                      <TableColumn fx:id="trinhDoColumn" prefWidth="128.0" text="Trình độ" />
+                        <TableColumn fx:id="beginColumn" minWidth="0.0" prefWidth="150.0" text="Bắt đầu" />
+                        <TableColumn fx:id="endColumn" minWidth="0.0" prefWidth="202.0" text="Kết thúc" />
+                    </columns>
+                  </TableView>
+               </children>
+            </VBox>
+         </children></AnchorPane>
+    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="598.0" prefWidth="322.0">
+         <children>
+            <VBox layoutX="-6.0" layoutY="-5.0" prefHeight="598.0" prefWidth="296.0">
+               <children>
+                  <GridPane prefHeight="216.0" prefWidth="286.0">
+                    <columnConstraints>
+                      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                    </columnConstraints>
+                    <rowConstraints>
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                    </rowConstraints>
+                     <children>
+                        <Label text="Tên phòng" />
+                        <Label text="Trình độ" GridPane.rowIndex="1" />
+                        <Label text="bắt đầu" GridPane.rowIndex="2" />
+                        <Label text="kết thúc" GridPane.rowIndex="3" />
+                        <Label fx:id="tenPhong" text="Label" GridPane.columnIndex="1" />
+                        <ComboBox fx:id="trinhdoCombo" onAction="#onTrinhDoChanged" prefWidth="150.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                        <ComboBox fx:id="begin" onAction="#onBeginChanged" prefWidth="150.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                        <Label text="Ngày thi" GridPane.rowIndex="4" />
+                        <Label fx:id="ngayThi" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                        <Label fx:id="end" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                     </children>
+                  </GridPane>
+                  <HBox alignment="CENTER" prefHeight="42.0" prefWidth="286.0">
+                     <children>
+                        <Button fx:id="addButton" mnemonicParsing="false" onAction="#onAddPhongThi" text="Thêm">
+                           <HBox.margin>
+                              <Insets right="10.0" />
+                           </HBox.margin>
+                        </Button>
+                        <Button mnemonicParsing="false" onAction="#refresh" text="Làm mới">
+                           <HBox.margin>
+                              <Insets right="10.0" />
+                           </HBox.margin></Button>
+                        <Button mnemonicParsing="false" onAction="#addMarkAction" text="Thêm điểm">
+                           <HBox.margin>
+                              <Insets right="10.0" />
+                           </HBox.margin>
+                        </Button>
+                     </children>
+                  </HBox>
+                  <TabPane prefHeight="338.0" prefWidth="286.0" tabClosingPolicy="UNAVAILABLE">
+                    <tabs>
+                      <Tab text="Danh sách đăng ký">
+                        <content>
+                          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="270.0" prefWidth="278.0">
+                                 <children>
+                                    <TableView fx:id="danhsachThiSinh" layoutX="2.0" layoutY="2.0" prefHeight="309.0" prefWidth="286.0">
+                                      <columns>
+                                        <TableColumn fx:id="sbdColumn" prefWidth="87.0" text="Số báo danh" />
+                                        <TableColumn fx:id="tenthiSinhColumn" prefWidth="103.0" text="Tên thí Sinh" />
+                                          <TableColumn fx:id="cmndColumn" prefWidth="90.0" text="CMND" />
+                                      </columns>
+                                    </TableView>
+                                 </children></AnchorPane>
+                        </content>
+                      </Tab>
+                      <Tab text="Giáo viên">
+                        <content>
+                          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+                        </content>
+                      </Tab>
+                    </tabs>
+                  </TabPane>
+               </children>
+               <padding>
+                  <Insets left="10.0" />
+               </padding></VBox>
+         </children></AnchorPane>
+  </items>
+</SplitPane>

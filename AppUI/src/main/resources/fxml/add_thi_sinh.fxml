@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<GridPane prefHeight="297.0" prefWidth="345.0" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.lpwanw.appui.controller.AddThiSinhController">
+   <columnConstraints>
+      <ColumnConstraints hgrow="SOMETIMES" maxWidth="285.0" minWidth="10.0" prefWidth="285.0" />
+      <ColumnConstraints hgrow="SOMETIMES" maxWidth="545.0" minWidth="10.0" prefWidth="315.0" />
+   </columnConstraints>
+   <rowConstraints>
+      <RowConstraints maxHeight="395.0" minHeight="10.0" prefHeight="88.0" vgrow="SOMETIMES" />
+      <RowConstraints maxHeight="348.0" minHeight="10.0" prefHeight="110.0" vgrow="SOMETIMES" />
+      <RowConstraints maxHeight="625.0" minHeight="10.0" prefHeight="107.0" vgrow="SOMETIMES" />
+      <RowConstraints maxHeight="625.0" minHeight="10.0" prefHeight="107.0" vgrow="SOMETIMES" />
+   </rowConstraints>
+   <children>
+      <Label text="Họ và tên" />
+      <Label text="Ngày sinh" GridPane.rowIndex="1" />
+      <Label text="Chứng minh" GridPane.rowIndex="3" />
+      <DatePicker fx:id="ngaySinh" prefHeight="25.0" prefWidth="319.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+      <TextField fx:id="nameText" GridPane.columnIndex="1" />
+      <TextField fx:id="cmndText" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+      <Label text="Số điện thoại" GridPane.rowIndex="2" />
+      <TextField fx:id="sdtText" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+   </children>
+</GridPane>

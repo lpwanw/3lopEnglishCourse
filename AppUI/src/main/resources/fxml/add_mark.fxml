@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<GridPane prefHeight="350.0" prefWidth="308.0" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.lpwanw.appui.controller.AddMarkController">
+   <columnConstraints>
+      <ColumnConstraints hgrow="SOMETIMES" maxWidth="340.0" minWidth="10.0" prefWidth="284.0" />
+      <ColumnConstraints hgrow="SOMETIMES" maxWidth="324.0" minWidth="10.0" prefWidth="316.0" />
+   </columnConstraints>
+   <rowConstraints>
+      <RowConstraints maxHeight="70.0" minHeight="10.0" prefHeight="50.0" vgrow="SOMETIMES" />
+      <RowConstraints maxHeight="90.0" minHeight="10.0" prefHeight="63.0" vgrow="SOMETIMES" />
+      <RowConstraints maxHeight="120.0" minHeight="10.0" prefHeight="50.0" vgrow="SOMETIMES" />
+      <RowConstraints maxHeight="160.0" minHeight="10.0" prefHeight="57.0" vgrow="SOMETIMES" />
+      <RowConstraints maxHeight="160.0" minHeight="10.0" prefHeight="57.0" vgrow="SOMETIMES" />
+      <RowConstraints maxHeight="160.0" minHeight="10.0" prefHeight="57.0" vgrow="SOMETIMES" />
+      <RowConstraints maxHeight="160.0" minHeight="10.0" prefHeight="57.0" vgrow="SOMETIMES" />
+   </rowConstraints>
+   <children>
+      <Label text="Tên" />
+      <Label text="SBD" GridPane.rowIndex="1" />
+      <Label text="CMND" GridPane.rowIndex="2" />
+      <Label text="nghe" GridPane.rowIndex="3" />
+      <TextField fx:id="noi" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+      <TextField fx:id="doc" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+      <TextField fx:id="viet" GridPane.columnIndex="1" GridPane.rowIndex="6" />
+      <TextField fx:id="nghe" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+      <Label text="nói" GridPane.rowIndex="4" />
+      <Label text="đọc" GridPane.rowIndex="5" />
+      <Label text="viết" GridPane.rowIndex="6" />
+      <Label fx:id="tenthisinh" text="Label" GridPane.columnIndex="1" />
+      <Label fx:id="sdb" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+      <Label fx:id="cmnd" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+   </children>
+   <padding>
+      <Insets left="20.0" right="20.0" />
+   </padding>
+</GridPane>
