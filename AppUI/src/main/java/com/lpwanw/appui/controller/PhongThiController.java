@@ -246,4 +246,9 @@ public class PhongThiController implements Initializable {
             }
         });
     }
+
+    public void onChanged(ActionEvent actionEvent) {
+        listPhongThi = FXCollections.observableList(phongThiRepository.getPhongThisByKhoathi(KhoaThiCombo.getSelectionModel().getSelectedItem()));
+        table.setItems(listPhongThi);
+    }
 }

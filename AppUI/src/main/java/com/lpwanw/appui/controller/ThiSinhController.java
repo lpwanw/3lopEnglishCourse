@@ -27,7 +27,6 @@ import java.util.ResourceBundle;
 
 @Component
 public class ThiSinhController implements Initializable {
-    public ComboBox<KhoaThi> KhoaThiCombo;
     public ComboBox<TrinhDo> trinhdoCombo;
     public TableView<Student> table;
     public TableColumn<Student, Integer> idCoumn;
@@ -53,6 +52,8 @@ public class ThiSinhController implements Initializable {
     public Label noi1;
     public Label doc1;
     public Label viet1;
+    public Label khoaThiText;
+    public Button dangkyButton;
     @Autowired
     SoBaoDanhRepository soBaoDanhRepository;
     @Autowired
@@ -80,20 +81,13 @@ public class ThiSinhController implements Initializable {
         cmndColumn.setCellValueFactory(new PropertyValueFactory<>("cmnd"));
         sdtColumn.setCellValueFactory(new PropertyValueFactory<>("sdt"));
         lastKhoaThi = khoaThiRepository.getTopByNgaythiIsAfter(LocalDate.now());
+        if(lastKhoaThi!=null){
+            khoaThiText.setText(lastKhoaThi.getTen()+": "+lastKhoaThi.getNgaythi());
+            dangkyButton.setDisable(false);
+        }else{
+            dangkyButton.setDisable(true);
+        }
         table.setItems(listStudent);
-        KhoaThiCombo.setItems(listKhoaThi);
-        KhoaThiCombo.getSelectionModel().selectLast();
-        KhoaThiCombo.setConverter(new StringConverter<>() {
-            @Override
-            public String toString(KhoaThi khoaThi) {
-                return khoaThi.getId()+":"+khoaThi.getTen() +": "+khoaThi.getNgaythi();
-            }
-
-            @Override
-            public KhoaThi fromString(String s) {
-                return khoaThiRepository.getById(Integer.valueOf(s.substring(s.indexOf(':'))));
-            }
-        });
         trinhdoCombo.setItems(listTrinhDo);
         trinhdoCombo.getSelectionModel().selectFirst();
         trinhdoCombo.setConverter(new StringConverter<>() {
@@ -162,7 +156,7 @@ public class ThiSinhController implements Initializable {
         if(st==null) return;
         tenText.setText(st.getHoTen());
         cmndText.setText(st.getCmnd());
-        List<SoBaoDanh> listsbd = soBaoDanhRepository.findSoBaoDanhByNguoidangky(st);
+        List<SoBaoDanh> listsbd = soBaoDanhRepository.findSoBaoDanhByNguoidangkyAndKhoaThi(st,lastKhoaThi);
         SoBaoDanh s1;
         SoBaoDanh s2;
         if(listsbd.size()==0){
@@ -207,16 +201,14 @@ public class ThiSinhController implements Initializable {
     public void onDangKyThi(ActionEvent actionEvent) {
         Student st = table.getSelectionModel().getSelectedItem();
         if(st==null) return;
-        KhoaThi kt = KhoaThiCombo.getSelectionModel().getSelectedItem();
         TrinhDo td = trinhdoCombo.getSelectionModel().getSelectedItem();
-
-        String SBD = td.getTen()+String.format("%02d",soBaoDanhRepository.findSoBaoDanhByKhoaThiAndTrinhDo(kt,td).size()+1);
+        String SBD = td.getTen()+String.format("%02d",soBaoDanhRepository.findSoBaoDanhByKhoaThiAndTrinhDo(lastKhoaThi,td).size()+1);
         SoBaoDanh soBaoDanh = new SoBaoDanh();
         soBaoDanh.setSoBaoDanh(SBD);
-        soBaoDanh.setKhoaThi(kt);
+        soBaoDanh.setKhoaThi(lastKhoaThi);
         soBaoDanh.setTrinhDo(td);
         soBaoDanh.setNguoidangky(st);
-        List<PhongThi> listPhong  = phongThiRepository.findPhongThiByKhoathiAndTrinhdo(kt,td);
+        List<PhongThi> listPhong  = phongThiRepository.findPhongThiByKhoathiAndTrinhdo(lastKhoaThi,td);
         try {
             soBaoDanh = soBaoDanhRepository.save(soBaoDanh);
             System.out.println("Tạo thành công");
@@ -230,6 +222,10 @@ public class ThiSinhController implements Initializable {
                     DanhSachDangKy dsdk = new DanhSachDangKy();
                     dsdk.setPhongthi(p);
                     dsdk.setSbd(soBaoDanh);
+                    dsdk.setNghe(-1);
+                    dsdk.setDoc(-1);
+                    dsdk.setNoi(-1);
+                    dsdk.setViet(-1);
                     danhSachDangKyRepository.save(dsdk);
                     break;
                 }
@@ -240,5 +236,17 @@ public class ThiSinhController implements Initializable {
             }
 
         }
+    }
+
+    public void refresh(ActionEvent actionEvent) {
+        lastKhoaThi = khoaThiRepository.getTopByNgaythiIsAfter(LocalDate.now());
+        if(lastKhoaThi!=null){
+            khoaThiText.setText(lastKhoaThi.getTen()+": "+lastKhoaThi.getNgaythi());
+            dangkyButton.setDisable(false);
+        }else{
+            dangkyButton.setDisable(true);
+        }
+        listStudent = FXCollections.observableList(thiSinhRepository.findAll());
+        table.setItems(listStudent);
     }
 }

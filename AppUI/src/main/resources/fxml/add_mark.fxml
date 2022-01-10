@@ -30,9 +30,9 @@
       <Label text="nói" GridPane.rowIndex="4" />
       <Label text="đọc" GridPane.rowIndex="5" />
       <Label text="viết" GridPane.rowIndex="6" />
-      <Label fx:id="tenthisinh" text="Label" GridPane.columnIndex="1" />
-      <Label fx:id="sdb" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-      <Label fx:id="cmnd" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+      <Label fx:id="tenthisinh" GridPane.columnIndex="1" />
+      <Label fx:id="sdb" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+      <Label fx:id="cmnd" GridPane.columnIndex="1" GridPane.rowIndex="2" />
    </children>
    <padding>
       <Insets left="20.0" right="20.0" />

@@ -65,18 +65,18 @@
                            <GridPane.margin>
                               <Insets left="10.0" />
                            </GridPane.margin></Label>
-                        <Label fx:id="tenText" text="Label" GridPane.columnIndex="1" />
-                        <Label fx:id="cmndText" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                        <Label fx:id="tenText" GridPane.columnIndex="1" />
+                        <Label fx:id="cmndText" GridPane.columnIndex="1" GridPane.rowIndex="1" />
                         <Label text="Khoá thi" GridPane.rowIndex="2">
                            <GridPane.margin>
                               <Insets left="10.0" />
                            </GridPane.margin></Label>
-                        <ComboBox fx:id="KhoaThiCombo" prefWidth="150.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
                         <Label text="Trình độ" GridPane.rowIndex="3">
                            <GridPane.margin>
                               <Insets left="10.0" />
                            </GridPane.margin></Label>
                         <ComboBox fx:id="trinhdoCombo" prefWidth="150.0" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                        <Label fx:id="khoaThiText" GridPane.columnIndex="1" GridPane.rowIndex="2" />
                      </children>
                   </GridPane>
                   <HBox alignment="CENTER" prefHeight="43.0" prefWidth="296.0">
@@ -86,12 +86,12 @@
                               <Insets right="10.0" />
                            </HBox.margin>
                         </Button>
-                        <Button mnemonicParsing="false" onAction="#onDangKyThi" text="Đăng ký thi">
+                        <Button fx:id="dangkyButton" mnemonicParsing="false" onAction="#onDangKyThi" text="Đăng ký thi">
                            <HBox.margin>
                               <Insets right="10.0" />
                            </HBox.margin>
                         </Button>
-                        <Button mnemonicParsing="false" text="Làm mới" />
+                        <Button mnemonicParsing="false" onAction="#refresh" text="Làm mới" />
                      </children>
                   </HBox>
                   <GridPane fx:id="gridLayout1" prefHeight="164.0" prefWidth="296.0">
@@ -138,12 +138,12 @@
                               <Insets left="10.0" />
                            </GridPane.margin>
                         </Label>
-                        <Label fx:id="sbdText" text="Label" GridPane.columnIndex="1" />
-                        <Label fx:id="phongThiText" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-                        <Label fx:id="nghe" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="2" />
-                        <Label fx:id="noi" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="3" />
-                        <Label fx:id="doc" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="4" />
-                        <Label fx:id="viet" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+                        <Label fx:id="sbdText" GridPane.columnIndex="1" />
+                        <Label fx:id="phongThiText" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                        <Label fx:id="nghe" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                        <Label fx:id="noi" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                        <Label fx:id="doc" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                        <Label fx:id="viet" GridPane.columnIndex="1" GridPane.rowIndex="5" />
                      </children>
                   </GridPane>
                   <GridPane fx:id="gridLayout2" layoutX="10.0" layoutY="278.0" prefHeight="164.0" prefWidth="296.0">
@@ -190,12 +190,12 @@
                               <Insets left="10.0" />
                            </GridPane.margin>
                         </Label>
-                        <Label fx:id="sbdText2" text="Label" GridPane.columnIndex="1" />
-                        <Label fx:id="phongThiText1" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-                        <Label fx:id="nghe1" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="2" />
-                        <Label fx:id="noi1" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="3" />
-                        <Label fx:id="doc1" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="4" />
-                        <Label fx:id="viet1" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+                        <Label fx:id="sbdText2" GridPane.columnIndex="1" />
+                        <Label fx:id="phongThiText1" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                        <Label fx:id="nghe1" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                        <Label fx:id="noi1" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                        <Label fx:id="doc1" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                        <Label fx:id="viet1" GridPane.columnIndex="1" GridPane.rowIndex="5" />
                      </children>
                   </GridPane>
                </children>

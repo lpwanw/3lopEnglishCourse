@@ -61,5 +61,7 @@ public class KhoaThiController implements Initializable {
         kt.setNgaythi(ngaythi.getValue());
         kt.setTen(tenText.getText());
         khoaThiRepository.save(kt);
+        list = FXCollections.observableList(khoaThiRepository.findAll());
+        table.setItems(list);
     }
 }

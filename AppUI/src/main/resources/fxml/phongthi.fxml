@@ -12,7 +12,7 @@
                <children>
                   <HBox alignment="CENTER" prefHeight="46.0" prefWidth="596.0">
                      <children>
-                        <ComboBox fx:id="KhoaThiCombo" prefWidth="150.0" />
+                        <ComboBox fx:id="KhoaThiCombo" onAction="#onChanged" prefWidth="150.0" />
                      </children>
                   </HBox>
                   <TableView fx:id="table" onMouseClicked="#onTableClick" prefHeight="565.0" prefWidth="587.0">
@@ -47,12 +47,12 @@
                         <Label text="Trình độ" GridPane.rowIndex="1" />
                         <Label text="bắt đầu" GridPane.rowIndex="2" />
                         <Label text="kết thúc" GridPane.rowIndex="3" />
-                        <Label fx:id="tenPhong" text="Label" GridPane.columnIndex="1" />
+                        <Label fx:id="tenPhong" GridPane.columnIndex="1" />
                         <ComboBox fx:id="trinhdoCombo" onAction="#onTrinhDoChanged" prefWidth="150.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
                         <ComboBox fx:id="begin" onAction="#onBeginChanged" prefWidth="150.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
                         <Label text="Ngày thi" GridPane.rowIndex="4" />
-                        <Label fx:id="ngayThi" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="4" />
-                        <Label fx:id="end" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                        <Label fx:id="ngayThi" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                        <Label fx:id="end" GridPane.columnIndex="1" GridPane.rowIndex="3" />
                      </children>
                   </GridPane>
                   <HBox alignment="CENTER" prefHeight="42.0" prefWidth="286.0">

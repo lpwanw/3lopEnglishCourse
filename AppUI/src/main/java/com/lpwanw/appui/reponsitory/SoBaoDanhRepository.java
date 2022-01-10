@@ -10,5 +10,5 @@ import java.util.List;
 
 public interface SoBaoDanhRepository extends JpaRepository<SoBaoDanh, Integer> {
     List<SoBaoDanh> findSoBaoDanhByKhoaThiAndTrinhDo(KhoaThi khoaThi, TrinhDo trinhDo);
-    List<SoBaoDanh> findSoBaoDanhByNguoidangky(Student nguoidangky);
+    List<SoBaoDanh> findSoBaoDanhByNguoidangkyAndKhoaThi(Student nguoidangky,KhoaThi khoaThi);
 }

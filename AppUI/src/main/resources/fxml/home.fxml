@@ -8,17 +8,19 @@
    <left>
       <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER">
          <children>
-            <Button mnemonicParsing="false" onAction="#onKhoaThiButton" text="Khoá Thi" />
-            <Button mnemonicParsing="false" onAction="#onPhongThiAction" text="Phòng Thi" />
-            <Button mnemonicParsing="false" onAction="#onThiSinhAction" text="Thí sinh" />
-            <Button mnemonicParsing="false" text="Button" />
-            <Button mnemonicParsing="false" text="Button" />
-            <Button mnemonicParsing="false" text="Button" />
-            <Button mnemonicParsing="false" text="Button" />
-            <Button mnemonicParsing="false" text="Button" />
-            <Button mnemonicParsing="false" text="Button" />
-            <Button mnemonicParsing="false" text="Button" />
-            <Button mnemonicParsing="false" onAction="#onHomeButton" text="Home" />
+            <Button minWidth="70.0" mnemonicParsing="false" onAction="#onKhoaThiButton" text="Khoá Thi">
+               <VBox.margin>
+                  <Insets bottom="40.0" />
+               </VBox.margin></Button>
+            <Button minWidth="70.0" mnemonicParsing="false" onAction="#onPhongThiAction" text="Phòng Thi">
+               <VBox.margin>
+                  <Insets bottom="40.0" />
+               </VBox.margin></Button>
+            <Button minWidth="70.0" mnemonicParsing="false" onAction="#onThiSinhAction" text="Thí sinh">
+               <VBox.margin>
+                  <Insets bottom="40.0" />
+               </VBox.margin></Button>
+            <Button minWidth="70.0" mnemonicParsing="false" onAction="#onHomeButton" text="Home" />
          </children>
          <opaqueInsets>
             <Insets />
