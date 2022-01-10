@@ -26,7 +26,7 @@
                               <Insets right="20.0" />
                            </HBox.margin>
                         </Label>
-                        <TextField fx:id="sdtSearch" />
+                        <TextField onKeyTyped="#onSearch" fx:id="sdtSearch" />
                      </children>
                     </HBox>
                     <TableView fx:id="table" onMouseClicked="#onTableClick" prefHeight="565.0" prefWidth="587.0">

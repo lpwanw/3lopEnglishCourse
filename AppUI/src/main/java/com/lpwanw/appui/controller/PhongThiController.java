@@ -181,6 +181,10 @@ public class PhongThiController implements Initializable {
             return;
         }
         listPhongThi = FXCollections.observableList(phongThiRepository.getPhongThisByKhoathi(lastKhoaThi));
+        addButton.setDisable(false);
+        listKhoaThi = FXCollections.observableList(khoaThiRepository.findAll());
+        KhoaThiCombo.setItems(listKhoaThi);
+        KhoaThiCombo.getSelectionModel().selectLast();
         tenPhong.setText(getTenPhongThi());
         table.setItems(listPhongThi);
     }
